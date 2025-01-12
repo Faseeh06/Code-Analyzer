@@ -5,12 +5,11 @@ Zenalyze is an innovative code analysis and autocomplete tool designed to enhanc
 ## Table of Contents
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
-3. [Project Structure](#project-structure)
-4. [Setup and Installation](#setup-and-installation)
-5. [Running the Application](#running-the-application)
-6. [Usage Guide](#usage-guide)
-7. [Contributing](#contributing)
-8. [License](#license)
+3. [Setup and Installation](#setup-and-installation)
+4. [Running the Application](#running-the-application)
+5. [Usage Guide](#usage-guide)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Features
 
@@ -41,33 +40,6 @@ Zenalyze is an innovative code analysis and autocomplete tool designed to enhanc
 
 - **Version Control:**
   - Git
-
-## Project Structure
-**zenalyze/
-├── src/
-│   ├── components/
-│   │   ├── CodeEditor.tsx
-│   │   ├── HistoryMenu.tsx
-│   │   ├── LanguageDisplay.tsx
-│   │   └── ThemeToggle.tsx
-│   ├── utils/
-│   │   ├── LinkedList.ts
-│   │   ├── localStorage.ts
-│   │   └── SearchEngine.ts
-│   ├── app/
-│   │   └── page.tsx
-│   └── styles/
-│       └── globals.css
-├── backend/
-│   ├── main.py
-│   ├── autocomplete.py
-│   └── merged.cpp
-├── public/
-│   └── logos/
-├── package.json
-├── tsconfig.json
-└── README.md
-**
 
 
 
