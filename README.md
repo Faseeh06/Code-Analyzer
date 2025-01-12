@@ -2,6 +2,9 @@
 
 Zenalyze is an innovative code analysis and autocomplete tool designed to enhance the coding experience for developers of all skill levels. It combines powerful lexical analysis, language detection, and AI-driven code suggestions to provide a seamless and intelligent coding environment.
 
+![image](https://github.com/user-attachments/assets/ab72fe6f-a177-40b7-b805-669804c2091c)
+
+
 ## Table of Contents
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
@@ -20,6 +23,9 @@ Zenalyze is an innovative code analysis and autocomplete tool designed to enhanc
 - Dark/Light theme toggle
 - Code history management with efficient search functionality
 - Responsive design for various screen sizes
+
+  ![image](https://github.com/user-attachments/assets/e2fd7be6-3da8-447b-8e49-af5f359ea421)
+
 
 ## Technologies Used
 
