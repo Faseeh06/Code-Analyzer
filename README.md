@@ -43,7 +43,7 @@ Zenalyze is an innovative code analysis and autocomplete tool designed to enhanc
   - Git
 
 ## Project Structure
-zenalyze/
+**zenalyze/
 ├── src/
 │   ├── components/
 │   │   ├── CodeEditor.tsx
@@ -67,7 +67,7 @@ zenalyze/
 ├── package.json
 ├── tsconfig.json
 └── README.md
-
+**
 
 
 
@@ -90,7 +90,7 @@ GEMINI_API_KEY=your_api_key_here
 ## Running the Application
 
 1 Start the Next.js development server:
-npm run dev
+        **npm run dev**
 
 
 
