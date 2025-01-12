@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.container {
+  --bg-primary: #f0e8e8;
+  --bg-secondary: rgba(204, 197, 202, 0.299);
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent-color: #3498db;
+  --border-color: #e2e8f0;
+  --scrollbar-thumb: #cbd5e0;
+  --scrollbar-track: #edf2f7;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container.dark {
+  --bg-primary: #14161b;
+  --bg-secondary: rgba(36, 42, 52, 0.7);
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --accent-color: #4299e1;
+  --border-color: #4a5568;
+  --scrollbar-thumb: #4a5568;
+  --scrollbar-track: #2d3748;
+}
+
+/* Language-specific themes */
+body[data-language="c++"] {
+  --bg-primary: #004482;
+  --accent-color: #00599C;
+}
+
+body[data-language="python"] {
+  --bg-primary: #306998;
+  --accent-color: #FFD43B;
+}
+
+body[data-language="java"] {
+  --bg-primary: #5382a1;
+  --accent-color: #f89820;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.placeholder {
+  width: 40px;
+}
+
+.editorContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  height: calc(100vh - 80px);
+  min-height: 0;
+}
+
+.editorBox {
+  flex: 1;
+  position: relative;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.outputContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Modified output box styles */
+.outputBox {
+  flex: 1;
+  position: relative;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: auto;
+  height: calc(50% - 0.5rem); /* Subtract half the gap */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  
+}
+
+.outputBox pre {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Audiowide', cursive;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.editor {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--text-primary);
+  resize: none;
+  outline: none;
+  font-family: 'Audiowide', cursive;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.editor::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Custom Scrollbar Styles */
+.editor::-webkit-scrollbar,
+.outputBox::-webkit-scrollbar {
+  display: none;
+}
+
+.editor::-webkit-scrollbar-track,
+.outputBox::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 6px;
+}
+
+.editor::-webkit-scrollbar-thumb,
+.outputBox::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border: 3px solid var(--scrollbar-track);
+  border-radius: 6px;
+}
+
+.editor::-webkit-scrollbar-corner,
+.outputBox::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.runButton {
+  padding: 0.5rem 1rem;
+  font-family: 'Audiowide', cursive;
+  font-size: 0.875rem;
+  color: white;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.2s ease, transform 0.3s ease;
+}
+
+.runButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.runButton:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.themeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.themeIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--icon-color, #fff);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.themeToggle[data-theme="light"] {
+  --icon-color: #000;
+}
+
+.themeToggle[data-theme="dark"] {
+  --icon-color: #fff;
+}
+
+.historyButton {
+  padding: 0.5rem 1rem;
+  font-family: 'Audiowide', cursive;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.historyButton:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Prism.js theme overrides */
+.highlight .token.comment,
+.highlight .token.prolog,
+.highlight .token.doctype,
+.highlight .token.cdata {
+  color: #6a9955;
+}
+
+.highlight .token.punctuation {
+  color: #d4d4d4;
+}
+
+.highlight .token.property,
+.highlight .token.tag,
+.highlight .token.boolean,
+.highlight .token.number,
+.highlight .token.constant,
+.highlight .token.symbol,
+.highlight .token.deleted {
+  color: #b5cea8;
+}
+
+.highlight .token.selector,
+.highlight .token.attr-name,
+.highlight .token.string,
+.highlight .token.char,
+.highlight .token.builtin,
+.highlight .token.inserted {
+  color: #ce9178;
+}
+
+.highlight .token.operator,
+.highlight .token.entity,
+.highlight .token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d4d4d4;
+}
+
+.highlight .token.atrule,
+.highlight .token.attr-value,
+.highlight .token.keyword {
+  color: #c586c0;
+}
+
+.highlight .token.function,
+.highlight .token.class-name {
+  color: #dcdcaa;
+}
+
+.highlight .token.regex,
+.highlight .token.important,
+.highlight .token.variable {
+  color: #d16969;
+}
+

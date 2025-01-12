@@ -1,0 +1,25 @@
+.languageDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Audiowide', cursive;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: transform 0.3s ease;
+}
+
+.languageDisplay:hover {
+  transform: scale(1.05);
+}
+
+.languageLogo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.languageName {
+  font-weight: bold;
+}
+
