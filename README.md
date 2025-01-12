@@ -47,6 +47,7 @@ Zenalyze is an innovative code analysis and autocomplete tool designed to enhanc
 - **Version Control:**
   - Git
 
+![image](https://github.com/user-attachments/assets/6d4cdbba-2b49-47d8-93ba-6a06b058c538)
 
 
 ## Setup and Installation
