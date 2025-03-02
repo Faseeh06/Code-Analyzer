@@ -17,7 +17,7 @@ class TrieNode {
     this.children = new Map();
     this.isEndOfWord = false;
     this.entries = new Set();
-    this.frequency = 0;S
+    this.frequency = 0; // Removed stray 'S'
   }
 }
 
